@@ -1,0 +1,66 @@
+<div class="container" data-ng-controller="goodCtrl">
+
+	<div class="card">
+		<div class="card-header">
+			<h2>仓库管理</h2>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+					<tr ng-repeat="good in goodList" ng-class="{ 'active': good.$edit }">
+						<td data-title="'编号'">
+							<span ng-if="!good.$edit">{{ good.id }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.id" />
+							</div>
+						</td>
+						<td data-title="'商品名'">
+							<span ng-if="!good.$edit">{{ good.name }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.name" />
+							</div>
+						</td>
+						<td data-title="'商品规格'">
+							<span ng-if="!good.$edit">{{ good.specification }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.specification" />
+							</div>
+						</td>
+						<td data-title="'分类'">
+							<span ng-if="!good.$edit">{{ good.type }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.type" />
+							</div>
+						</td>
+						<td data-title="'单位'">
+							<span ng-if="!good.$edit">{{ good.unit }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.unit" />
+							</div>
+						</td>
+						<td data-title="'零售价'">
+							<span ng-if="!good.$edit">{{ good.price }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.price" />
+							</div>
+						</td>
+						<td data-title="'最新成本'">
+							<span ng-if="!good.$edit">{{ good.cost }}</span>
+							<div ng-if="good.$edit">
+								<input class="form-control" type="text" ng-model="good.cost" />
+							</div>
+						</td>
+						<td data-title="'操作'">
+							<button type="button" class="btn btn-default" ng-if="!good.$edit" ng-click="good.$edit = true">
+								<i class="zmdi zmdi-edit"></i>
+							</button>
+							<button type="button" class="btn btn-success" ng-if="good.$edit" ng-click="good.$edit = false">
+								<i class="zmdi zmdi-check"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

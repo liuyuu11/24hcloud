@@ -1,0 +1,42 @@
+<div class="container" data-ng-controller="shopCtrl">
+
+	<div class="card">
+		<div class="card-header">
+			<h2>商店管理</h2>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+					<tr ng-repeat="shop in shopList" ng-class="{ 'active': shop.$edit }">
+						<td data-title="'编号'">
+							<span ng-if="!shop.$edit">{{ shop.id }}</span>
+							<div ng-if="shop.$edit">
+								<input class="form-control" type="text" ng-model="shop.id" />
+							</div>
+						</td>
+						<td data-title="'仓库名'">
+							<span ng-if="!shop.$edit">{{ shop.name }}</span>
+							<div ng-if="shop.$edit">
+								<input class="form-control" type="text" ng-model="shop.name" />
+							</div>
+						</td>
+						<td data-title="'仓库地址'">
+							<span ng-if="!shop.$edit">{{ shop.address }}</span>
+							<div ng-if="shop.$edit">
+								<input class="form-control" type="text" ng-model="shop.address" />
+							</div>
+						</td>
+						<td data-title="'操作'">
+							<button type="button" class="btn btn-default" ng-if="!shop.$edit" ng-click="shop.$edit = true">
+								<i class="zmdi zmdi-edit"></i>
+							</button>
+							<button type="button" class="btn btn-success" ng-if="shop.$edit" ng-click="shop.$edit = false">
+								<i class="zmdi zmdi-check"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

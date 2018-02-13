@@ -1,0 +1,11 @@
+{
+	"data": [{
+		"id": 1,
+		"name": "可乐",
+		"specification": "355ML",
+		"type": "日用品",
+		"unit": "瓶",
+		"price": "2.5",
+		"cost": "2"
+	}]
+}

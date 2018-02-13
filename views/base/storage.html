@@ -1,0 +1,42 @@
+<div class="container" data-ng-controller="storageCtrl">
+
+	<div class="card">
+		<div class="card-header">
+			<h2>仓库管理</h2>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+					<tr ng-repeat="storage in storageList" ng-class="{ 'active': storage.$edit }">
+						<td data-title="'编号'">
+							<span ng-if="!storage.$edit">{{ storage.id }}</span>
+							<div ng-if="storage.$edit">
+								<input class="form-control" type="text" ng-model="storage.id" />
+							</div>
+						</td>
+						<td data-title="'仓库名'">
+							<span ng-if="!storage.$edit">{{ storage.name }}</span>
+							<div ng-if="storage.$edit">
+								<input class="form-control" type="text" ng-model="storage.name" />
+							</div>
+						</td>
+						<td data-title="'仓库地址'">
+							<span ng-if="!storage.$edit">{{ storage.address }}</span>
+							<div ng-if="storage.$edit">
+								<input class="form-control" type="text" ng-model="storage.address" />
+							</div>
+						</td>
+						<td data-title="'操作'">
+							<button type="button" class="btn btn-default" ng-if="!storage.$edit" ng-click="storage.$edit = true">
+								<i class="zmdi zmdi-edit"></i>
+							</button>
+							<button type="button" class="btn btn-success" ng-if="storage.$edit" ng-click="storage.$edit = false">
+								<i class="zmdi zmdi-check"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

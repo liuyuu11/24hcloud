@@ -1,0 +1,48 @@
+<div class="container" data-ng-controller="userCtrl">
+
+	<div class="card">
+		<div class="card-header">
+			<h2>人员管理</h2>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+					<tr ng-repeat="user in userList" ng-class="{ 'active': user.$edit }">
+						<td data-title="'编号'">
+							<span ng-if="!user.$edit">{{ user.id }}</span>
+							<div ng-if="user.$edit">
+								<input class="form-control" type="text" ng-model="user.id" />
+							</div>
+						</td>
+						<td data-title="'姓名'">
+							<span ng-if="!user.$edit">{{ user.name }}</span>
+							<div ng-if="user.$edit">
+								<input class="form-control" type="text" ng-model="user.name" />
+							</div>
+						</td>
+						<td data-title="'邮件'">
+							<span ng-if="!user.$edit">{{ user.email }}</span>
+							<div ng-if="user.$edit">
+								<input class="form-control" type="email" ng-model="user.email" />
+							</div>
+						</td>
+						<td data-title="'电话'">
+							<span ng-if="!user.$edit">{{ user.telnumber }}</span>
+							<div ng-if="user.$edit">
+								<input class="form-control" type="text" ng-model="user.telnumber" />
+							</div>
+						</td>
+						<td data-title="'操作'">
+							<button type="button" class="btn btn-default" ng-if="!user.$edit" ng-click="user.$edit = true">
+								<i class="zmdi zmdi-edit"></i>
+							</button>
+							<button type="button" class="btn btn-success" ng-if="user.$edit" ng-click="user.$edit = false">
+								<i class="zmdi zmdi-check"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
