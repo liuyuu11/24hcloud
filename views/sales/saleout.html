@@ -1,0 +1,60 @@
+<div class="container" data-ng-controller="saleoutCtrl">
+
+	<div class="card">
+		<div class="card-header">
+			<h2>销售数据</h2>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+					<tr ng-repeat="saleout in saleoutList" ng-class="{ 'active': saleout.$edit }">
+						<td data-title="'编号'">
+							<span ng-if="!saleout.$edit">{{ saleout.id }}</span>
+							<div ng-if="saleout.$edit">
+								<input class="form-control" type="text" ng-model="saleout.id" />
+							</div>
+						</td>
+						<td data-title="'时间'">
+							<span ng-if="!saleout.$edit">{{ saleout.date }}</span>
+							<div ng-if="saleout.$edit">
+								<input class="form-control" type="text" ng-model="saleout.date" />
+							</div>
+						</td>
+						<td data-title="'销售门店'">
+							<span ng-if="!saleout.$edit">{{ saleout.shop }}</span>
+							<div ng-if="saleout.$edit">
+								<input class="form-control" type="text" ng-model="saleout.shop" />
+							</div>
+						</td>
+						<td data-title="'销售金额'">
+							<span ng-if="!saleout.$edit">{{ saleout.money }}</span>
+							<div ng-if="saleout.$edit">
+								<input class="form-control" type="text" ng-model="saleout.money" />
+							</div>
+						</td>
+						<td data-title="'优化金额'">
+							<span ng-if="!saleout.$edit">{{ saleout.count }}</span>
+							<div ng-if="saleout.$edit">
+								<input class="form-control" type="text" ng-model="saleout.count" />
+							</div>
+						</td>
+						<td data-title="'购买人'">
+							<span ng-if="!saleout.$edit">{{ saleout.member }}</span>
+							<div ng-if="saleout.$edit">
+								<input class="form-control" type="text" ng-model="saleout.member" />
+							</div>
+						</td>
+						<td data-title="'操作'">
+							<button type="button" class="btn btn-default" ng-if="!saleout.$edit" ng-click="saleout.$edit = true">
+								<i class="zmdi zmdi-edit"></i>
+							</button>
+							<button type="button" class="btn btn-success" ng-if="saleout.$edit" ng-click="saleout.$edit = false">
+								<i class="zmdi zmdi-check"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

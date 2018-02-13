@@ -557,4 +557,17 @@ materialAdmin
 				url: '/base/shop',
 				templateUrl: 'views/base/shop.html'
 			})
+
+			//------------------------------
+			// sales
+			//------------------------------
+			.state('sales', {
+				url: '/sales',
+				templateUrl: 'views/common.html'
+			})
+
+			.state('sales.saleout', {
+				url: '/sales/saleout',
+				templateUrl: 'views/sales/saleout.html'
+			})
 	});

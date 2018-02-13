@@ -41,33 +41,30 @@
 
 		<li class="sub-menu">
 			<a href="" toggle-submenu>
-				<i class="zmdi zmdi-menu"></i> 基础资料</a>
+				<i class="zmdi zmdi-menu"></i> 基础管理</a>
 			<ul>
 				<li class="sub-menu">
-					<a href="" toggle-submenu>人员管理</a>
+					<a href="" toggle-submenu>人力设置</a>
 					<ul>
 						<li>
 							<a href="">部门设置</a>
 						</li>
 						<li>
-							<a data-ui-sref-active="active" data-ui-sref="base.user" data-ng-click="mactrl.sidebarStat($event)">人员档案</a>
-						</li>
-						<li>
-							<a href="">人员属性</a>
+							<a data-ui-sref-active="active" data-ui-sref="base.user" data-ng-click="mactrl.sidebarStat($event)">人员设置</a>
 						</li>
 					</ul>
 				</li>
 				<li class="sub-menu">
-					<a href="" toggle-submenu>仓库存货</a>
+					<a href="" toggle-submenu>仓货设置</a>
 					<ul>
 						<li>
-							<a data-ui-sref-active="active" data-ui-sref="base.storage" data-ng-click="mactrl.sidebarStat($event)">仓库数据</a>
+							<a data-ui-sref-active="active" data-ui-sref="base.storage" data-ng-click="mactrl.sidebarStat($event)">仓库设置</a>
 						</li>
 						<li>
-							<a data-ui-sref-active="active" data-ui-sref="base.good" data-ng-click="mactrl.sidebarStat($event)">商品数据</a>
+							<a data-ui-sref-active="active" data-ui-sref="base.good" data-ng-click="mactrl.sidebarStat($event)">商品设置</a>
 						</li>
 						<li>
-							<a data-ui-sref-active="active" data-ui-sref="base.shop" data-ng-click="mactrl.sidebarStat($event)">商店数据</a>
+							<a data-ui-sref-active="active" data-ui-sref="base.shop" data-ng-click="mactrl.sidebarStat($event)">商店设置</a>
 						</li>
 					</ul>
 				</li>
@@ -86,6 +83,15 @@
 		</li>
 		<li class="sub-menu">
 			<a href="" toggle-submenu>
+				<i class="zmdi zmdi-money"></i> 销售管理</a>
+			<ul>
+				<li>
+					<a data-ui-sref-active="active" data-ui-sref="sales.saleout" data-ng-click="mactrl.sidebarStat($event)">销售数据</a>
+				</li>
+			</ul>
+		</li>
+		<li class="sub-menu">
+			<a href="" toggle-submenu>
 				<i class="zmdi zmdi-case"></i> 采购管理</a>
 			<ul>
 				<li class="sub-menu">
@@ -98,23 +104,6 @@
 				</li>
 				<li class="sub-menu">
 					<a href="" toggle-submenu>进货单</a>
-				</li>
-			</ul>
-		</li>
-		<li class="sub-menu">
-			<a href="" toggle-submenu>
-				<i class="zmdi zmdi-money"></i> 销售管理</a>
-			<ul>
-				<li class="sub-menu">
-					<a href="" toggle-submenu>设置</a>
-					<ul>
-						<li>
-							<a href="">销售类型</a>
-						</li>
-					</ul>
-				</li>
-				<li class="sub-menu">
-					<a href="" toggle-submenu>销售单</a>
 				</li>
 			</ul>
 		</li>
